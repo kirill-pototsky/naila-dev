@@ -1,0 +1,44 @@
+- var introArr = ['Все творческие направления в одном уютном пространстве для вашего развития', 'Каждый день мы дарим сотням людей наши знания, любовь, чемпионское мышление и внимание.', 'Вместе с нами вы раскроете свои таланты и мечты вместе с нами!'];
+
+mixin intro()
+  +b.intro&attributes(attributes)
+    +e.banner.mobile
+      +bg-image('banner-mobile.png')
+      //- span Banner
+    +grid.desktop
+      +col(8)
+        +e.H1.title
+          span Творческий
+          | #{' '} коворкинг
+
+        .list
+          ul
+            li Все творческие направления в одном уютном пространстве
+              br
+              | для вашего развития
+            li Каждый день мы дарим сотням людей наши знания, любовь, чемпионское мышление и внимание
+            li Вместе с нами вы раскроете свои таланты и мечты!
+
+        //- +list(introArr)
+
+        +button(modal-target="form") Хочу пробный урок
+
+      +col(4)
+        +e.image
+          +bg-image('intro/intro-bg.png')
+
+mixin intro-school(data)
+  +b.intro&attributes(attributes)
+    +grid
+      +col({xl: 7, md: 12})
+        +e.video
+          iframe(width="560" height="315" src=data.linkVideo frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+
+      +col({xl: 5, md: 12})
+        h4= data.title
+        p= data.subtitle
+
+        +list(data.list)
+
+        if data.descr
+          p= data.descr

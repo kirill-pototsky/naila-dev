@@ -1,0 +1,78 @@
+mixin footer()
+  +b.FOOTER.footer&attributes(attributes)
+    .container
+      +logo
+
+      +grid
+        +col({xl: 4, md: 12}).order-2
+          +e.title Адреса филиалов:
+          +e.A(href='https://yandex.by/maps/-/CCUErVvUkA' target="_blank").item
+            +icon('map')
+            | #{' '} Г. Гродно, ул. Мостовая 31
+            br
+            | (здание перчаточной фирмы
+            br
+            | Акцент, 2 этаж, 6 кабинет)
+        +col({xl: 4, md: 12}).order-4
+          +e.title Реквизиты:
+          +e.item ИП Чернявская Т.Г.
+            br
+            | УНП 591136221
+            br
+            | Расчетный счет
+            br
+            | BY89ALFA30132026180010270000
+            br
+            | ЗАО "Альфа-банк" ALFABY2X
+          +e.item.desktop Оплата через ЕРИП
+            .pay-info ?
+              span В системе выбираете блок "Образование и развитие"
+                br
+                | Блок "Дополнительное образование"
+                br
+                | Блок "Школы, дворцы, центры"
+                br
+                | ИП Чернявская Т.Г.
+                br
+                | Счёт 1 — для центра города
+        +col({xl: 3, md: 12}).order-3
+          +e.title Контакты:
+          +e.item.contacts
+              a(href="tel:+375297854772")
+                span.icon
+                  +icon('clock')
+                | #{' '} +375(29) 78 54 772 (MTC)
+              a(href="mailto:nailaprojects@mail.ru")
+                span.icon
+                  +icon('e-mail')
+                | #{' '} nailaprojects@mail.ru
+          +e.item.contacts
+              span
+                span.icon
+                  +icon('clock')
+                | #{' '} 9:00-22:00
+              span
+                span.icon
+                  +icon('calendar')
+                | #{' '} Пн-Вс
+        +col({xl: 4, md: 12}).mobile.order-4
+          +e.title Оплата через ЕРИП:
+          +e.item В системе выбираете блок "Образование и развитие"
+            br
+            | Блок "Дополнительное образование"
+            br
+            | Блок "Школы, дворцы, центры"
+            br
+            | ИП Чернявская Т.Г.
+            br
+            | Счёт 1 — для центра города
+        +col({xl: 1, md: 12}).order-1
+          +e.social
+            a(href="https://m.vk.com/naila_belarus" target="_blank")
+              +icon('vk')
+            a(href="https://www.instagram.com/naila_belarus/?hl=ru" target="_blank")
+              +icon('instagram')
+            //- a(href="https://ok.ru/nailagrodno" target="_blank")
+            //-   +icon('ok')
+            a(href="https://m.facebook.com/nailabelarus/" target="_blank")
+              +icon('fb')

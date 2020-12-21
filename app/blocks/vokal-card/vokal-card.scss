@@ -1,0 +1,56 @@
+.vokal-card {
+  &__item {
+    background: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 10px 100px 10px 35px;
+    display: flex;
+    align-items: center;
+
+    .num {
+      min-width: 200px;
+      font-size: 200px;
+      color: rgba(#e85649, 0.2);
+    }
+
+    .content {
+      margin-left: 80px;
+
+      .title {
+        font-size: 28px;
+        line-height: 33px;
+
+        + p {
+          margin-top: 15px;
+        }
+      }
+
+      p {
+        font-family: $font-second;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+
+    @include screen(md, max) {
+      .num {
+        min-width: 150px;
+        font-size: 150px;
+      }
+    }
+
+    @include screen(sm, max) {
+      flex-direction: column;
+      padding: 30px;
+
+      .content {
+        margin-left: 0;
+      }
+    }
+
+    @include screen(xs, max) {
+      padding: 10px;
+    }
+  }
+}

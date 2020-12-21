@@ -1,0 +1,59 @@
+.checkradio {
+  position: relative;
+  padding-left: 35px;
+  display: inline-block;
+  cursor: pointer;
+
+  &__input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    &:checked {
+      + .checkradio__box {
+        svg {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__box {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #231f20;
+    border-radius: 3px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    svg {
+      width: 14px;
+      height: 13px;
+      fill: url(#gradient);
+      display: block;
+      opacity: 0;
+      transition: opacity $ease-main;
+
+      @include center-image;
+    }
+  }
+
+  &__content {
+    font-family: $font-second;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 25px;
+
+    a,
+    span {
+      text-decoration: underline;
+    }
+  }
+}

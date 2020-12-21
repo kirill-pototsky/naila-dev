@@ -1,0 +1,13 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Страница не найдена';
+  - var formNone = true;
+
+block content
+  section.error-404
+    .container
+      h1 404
+      p.desktop Cтраница не найдена
+      p.mobile Кажется, страница не найдена, но мы знаем, как добраться до главной страницы
+      +button('a')(href="index.html") Главная страница

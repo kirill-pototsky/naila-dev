@@ -1,0 +1,9 @@
+mixin copyright()
+  +b.copyright&attributes(attributes)
+    .container
+      +grid
+        +col({xl: 4, md: 12})
+          +e.item 2020 Naila. Все права защищены
+        +col({xl: 4, md: 12})
+           +e.A(href="article.html" target="_blank").item Пользовательское соглашение
+    block

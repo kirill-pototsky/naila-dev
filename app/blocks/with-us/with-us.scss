@@ -1,0 +1,94 @@
+.with-us {
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 70px;
+    }
+
+    .element {
+      box-shadow: 0px 0px 15px rgba(174, 34, 57, 0.15);
+      border-radius: 0px 60px 60px 0px;
+      background: $gradient-main;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 54px;
+      width: 45%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+      overflow: hidden;
+
+      @include screen(md, max) {
+        width: 100%;
+        border-radius: 0 !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        justify-content: center !important;
+      }
+
+      .num {
+        position: relative;
+        font-size: 60px;
+        margin-right: 37px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -96px;
+          transform: translateY(-50%);
+          width: 4px;
+          height: 500px;
+          background-color: #fff;
+        }
+
+        @include screen(md, max) {
+          margin-right: 20px;
+
+          &::before {
+            display: none;
+          }
+        }
+      }
+
+      span {
+        font-family: $font-second;
+        color: #fff;
+        font-size: 18px;
+      }
+    }
+
+    &_reverse {
+      display: flex;
+      justify-content: flex-end;
+
+      .element {
+        border-radius: 60px 0 0 60px;
+        justify-content: flex-start;
+        padding-left: 54px;
+        background: $gradient-main-reverse;
+
+        .num {
+          margin-right: 0;
+          margin-left: 37px;
+
+          &::before {
+            left: auto;
+            right: -96px;
+          }
+
+          @include screen(md, max) {
+            margin-left: 20px;
+
+            &::before {
+              display: none;
+            }
+          }
+        }
+
+        span {
+          text-align: right;
+        }
+      }
+    }
+  }
+}

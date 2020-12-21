@@ -1,0 +1,56 @@
+mixin nav()
+  +b.NAV.nav&attributes(attributes)
+    button.open-nav.mobile
+      span
+    ul.nav-list.desktop
+      li
+        a(class=index&&"active" href="index.html") Главная
+      li#dropDownOpen
+        a(href="#!") Наши направления
+        +icon('arrow-down')
+
+        .wrap-drop-down
+          ul.drop-down
+            li
+              a(class=fitness&&"active" href="fitness-page.html") Школа фитнеса
+                br
+                | #{' '} и танца
+            li
+              a(class=vokal&&"active" href="vokal-page.html") Школа вокала
+            li
+              a(class=orator&&"active" href="orator-page.html") Школа ораторского
+                br
+                | #{' '} искусства
+            li
+              a(class=actor&&"active" href="actor-page.html") Школа актерского
+                br
+                | #{' '} мастерства
+
+    .nav-mobile.mobile
+      .header-nav
+        +logo(true)
+        .close
+
+      ul
+        li
+          a(href="index.html") Главная
+        li
+          a(href="fitness-page.html") Школа фитнеса и танца
+        li
+          a(href="vokal-page.html") Школа вокала
+        li
+          a(href="actor-page.html") Актёрское мастерство
+        li
+          a(href="orator-page.html") Ораторское искусство
+
+      .social
+        a(href="https://www.instagram.com/naila_belarus/?hl=ru" target="_blank")
+          +icon('instagram')
+        a(href="https://m.vk.com/naila_belarus" target="_blank")
+          +icon('vk')
+        //- a(href="https://ok.ru/nailagrodno" target="_blank")
+        //-   +icon('ok')
+        a(href="https://m.facebook.com/nailabelarus/" target="_blank")
+          +icon('fb')
+
+

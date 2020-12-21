@@ -1,0 +1,22 @@
+mixin modals()
+  +b.modals&attributes(attributes)
+    block
+
+mixin modal-form()
+  +b.modal-form&attributes(attributes)
+    .close
+    +form
+      +inputbox
+        +input(type="text" placeholder="Имя" name="Имя")
+      +inputbox
+        +input(type="text" placeholder="Телефон" name="Телефон" required)
+      +inputbox
+        +checkradio(true, true) Я согласен на
+          span #{' '} обработку персональных данных
+
+      +button Получить бесплатно занятие
+
+mixin modal-thanks()
+  +b.modal-thanks&attributes(attributes)
+    h2 Спасибо, мы скоро свяжемся с вами!
+

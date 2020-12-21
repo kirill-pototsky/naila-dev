@@ -1,0 +1,39 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Школа вокала';
+  - var vokal = true;
+  - var formNone = true;
+  -
+    var introVokalData = {
+      "title": "Занятия вокалом дарят прилив энергии и позитива",
+      "subtitle": "Именно вокал даёт возможность:",
+      "list": ["овладеть своим природным голосом", "свободно петь песни любимых исполнителей", "выступать и не бояться сцены", "найти свой стиль", "сделать сюрприз любимому человеку"],
+      "descr": "С нами ты полюбишь свой голос и будешь кайфовать от себя!",
+      "linkVideo": "https://www.youtube.com/embed/HfEW9XK6uUI"
+    };
+
+block content
+  +section._school
+    .text-section
+      h1 Школа вокала
+    +intro-school(introVokalData)
+
+  //- +section._padding-none
+  //-   .text-section
+  //-      p Мы помогаем стать лучшей версией себя.
+  //-       br
+  //-       | Заботьтесь о себе и приходите развиваться с нами.
+
+  +section
+    .text-section
+       h2
+        span Наш комплексный подход:
+    +vokal-card
+
+  +section
+    .text-section
+      h2
+        span Виды занятий
+    +tabs-section(false, true)
+

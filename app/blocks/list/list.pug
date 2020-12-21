@@ -1,0 +1,6 @@
+mixin list(data)
+  +b.list&attributes(attributes)
+    ul
+      each text in data
+        li= text
+    block

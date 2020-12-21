@@ -1,0 +1,13 @@
+- var galleryData = getData('danceData');
+
+mixin gallery-school()
+  +b.gallery-school&attributes(attributes)
+    +slider(true, true, true, true).js-school-slider
+      each item in galleryData
+        +slide
+          .gallery-school__item
+            .title= item.name
+            +bg-image(`dance/${item.image}.jpg`)
+            .content
+              p= item.content
+    block

@@ -1,0 +1,17 @@
+mixin slider(pagination, buttons, dubleNav,mobile)
+  +b.swiper-container&attributes(attributes)
+    .swiper-wrapper
+      block
+    if pagination
+      .swiper-pagination.desktop
+    if buttons
+      .swiper-button-prev.desktop
+      .swiper-button-next.desktop
+    if dubleNav
+      .swiper-nav(class=mobile&&"mobile")
+        .swiper-button-prev
+        .swiper-pagination
+        .swiper-button-next
+mixin slide()
+  .swiper-slide
+    block

@@ -1,0 +1,52 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Творческий коворкинг в Гродно';
+  - var index = true;
+  -
+    var cardData = getData('cardsData');
+
+block content
+  +section._intro
+    +intro
+
+  +section.desktop
+    .video-section
+      iframe(width="560" height="315" src="https://www.youtube.com/embed/UmFt_b5X9gs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+    //- .text-section
+      p Мы стремились создать место вдохновения и силы,
+        br
+        | условия для комфортного развития
+        br
+        | и досуга.
+
+  +section._padding-none.mobile
+    +card-mobile
+
+  +section._padding-none.desktop
+    each card in cardData
+      +card(card)
+
+  +section
+    .text-section
+      h2
+        span Почему мы?
+    +why-we
+
+  +section(true)._overflow-hidden
+    .text-section
+      h2
+        span Галерея
+    +gallery-intro
+
+  +section(true)
+    .text-section
+      h2
+        span С нами ты:
+    +with-us
+
+  +section._padding-top-none
+    +person
+
+
+

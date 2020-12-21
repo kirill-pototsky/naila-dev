@@ -1,0 +1,16 @@
+mixin tabs()
+  +b.UL.tabs&attributes(attributes)
+    block
+
+mixin tab(link)
+  +e(link?"a":"li").tab&attributes(attributes)
+    span
+      block
+
+mixin tabs-content()
+  .tabs-content&attributes(attributes)
+    block
+
+mixin tab-wrapper()
+  .tabs-content__wrapper&attributes(attributes)
+    block

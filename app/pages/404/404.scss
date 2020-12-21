@@ -1,0 +1,44 @@
+.error-404 {
+  flex-grow: 1;
+  padding-top: 140px;
+  padding-bottom: 210px;
+  text-align: center;
+
+  @include screen(md, max) {
+    padding-top: 137px;
+    padding-bottom: 48px;
+  }
+
+  h1 {
+    @include gradient-text($gradient-main);
+    font-size: 200px;
+    line-height: 244px;
+    font-family: $font-second;
+    font-weight: 500;
+
+    @include screen(md, max) {
+      font-size: 100px;
+      line-height: 122px;
+    }
+  }
+
+  p {
+    font-family: $font-second;
+    font-weight: 500;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+    @include screen(md, max) {
+      font-size: 18px;
+      line-height: 26px;
+      margin-bottom: 123px;
+    }
+  }
+
+  .button {
+    @include screen(md, max) {
+      max-width: 100%;
+    }
+  }
+}

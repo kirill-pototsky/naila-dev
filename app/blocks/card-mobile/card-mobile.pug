@@ -1,0 +1,33 @@
+-
+  var cardArr = [
+    {
+      "name": "Школа танцев",
+      "link": "fitness-page.html"
+    },
+    {
+      "name": "Школа вокала",
+      "link": "vokal-page.html"
+    },
+    {
+      "name": "Школа ораторского искусства",
+      "link": "orator-page.html"
+    },
+    {
+      "name": "Школа актерского мастерва",
+      "link": "actor-page.html"
+    }
+  ];
+
+mixin card-mobile()
+  +b.card-mobile&attributes(attributes)
+    +button-wrap
+      //- +button._dark._uppercase Заказать
+      //- +button._uppercase КУПИТЬ
+      +button(modal-target="form") Хочу пробный урок
+
+    +e.wrap
+      each item, count in cardArr
+        +e.A(href=item.link).image
+          +bg-image(`intro/card-${count + 1}.jpg`)
+          span.descr= item.name
+    block

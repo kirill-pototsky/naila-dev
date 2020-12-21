@@ -1,0 +1,32 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Школа ораторского искусства';
+  - var orator = true;
+  - var formNone = true;
+  -
+    var introOratorlData = {
+      "title": "Прокачай харизму лидера и умение свободно говорить",
+      "subtitle": "С нами ты обретёшь навык:",
+      "list": ["успешно и уверенно выступать", "убедительно продавать", "вести переговоры без страха", "разрешать любой конфликт"],
+      "linkVideo": "https://www.youtube.com/embed/6tlhBw3XWj4"
+    };
+
+block content
+  +section._school
+    .text-section
+      h1 Школа ораторского искусства
+    +intro-school(introOratorlData)
+
+  //- +section._padding-none
+  //-   .text-section
+  //-      p Мы помогаем стать лучшей версией себя.
+  //-       br
+  //-       | Улучшай свои навыки убеждения и приходи развиваться с нами
+
+  +section
+    .text-section
+      h2
+        span Виды занятий
+    +tabs-section
+

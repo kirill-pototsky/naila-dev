@@ -1,0 +1,46 @@
+// Scale base font size for different screen sizes (to scale all elements with sizes in 'rem' units)
+
+// ##########
+// Media queries and coefficients for rem scale
+// ##########
+
+$baseFontSize: 10px;
+
+$mqPhone1: 'all and (max-device-width: 600px) and (orientation: portrait), all and (max-device-width: 600px) and (orientation: landscape)';
+$scalePhone1: 0.94;
+
+$mqPhone2: 'all and (max-device-width: 500px) and (orientation: portrait), all and (max-device-width: 500px) and (orientation: landscape)';
+$scalePhone2: 0.78;
+
+$mqPhone3: 'all and (max-device-width: 414px) and (orientation: portrait), all and (max-device-width: 414px) and (orientation: landscape)';
+$scalePhone3: 0.65;
+
+$mqPhone4: 'all and (max-device-width: 375px) and (orientation: portrait), all and (max-device-width: 375px) and (orientation: landscape)';
+$scalePhone4: 0.58;
+
+$mqPhone5: 'all and (max-device-width: 320px) and (orientation: portrait), all and (max-device-width: 320px) and (orientation: landscape)';
+$scalePhone5: 0.5;
+
+html {
+  font-size: $baseFontSize;
+
+  @media #{$mqPhone1} {
+    font-size: $baseFontSize * $scalePhone1;
+  }
+
+  @media #{$mqPhone2} {
+    font-size: $baseFontSize * $scalePhone2;
+  }
+
+  @media #{$mqPhone3} {
+    font-size: $baseFontSize * $scalePhone3;
+  }
+
+  @media #{$mqPhone4} {
+    font-size: $baseFontSize * $scalePhone4;
+  }
+
+  @media #{$mqPhone5} {
+    font-size: $baseFontSize * $scalePhone5;
+  }
+}

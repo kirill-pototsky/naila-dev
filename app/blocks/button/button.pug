@@ -1,0 +1,8 @@
+mixin button-wrap()
+  +b.button-wrap&attributes(attributes)
+    block
+
+mixin button(tag)
+  +b(tag||'button').button&attributes(attributes)
+    span
+      block

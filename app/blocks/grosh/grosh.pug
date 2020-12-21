@@ -1,0 +1,79 @@
+mixin grosh()
+  form(action="https://www.hutkigrosh.by/pay#/pay" method="post")
+    p(style="display:none")
+      span serviceProviderId:
+      input(type="number" name="serviceProviderId" value="14098")
+
+    p(style="display:none")
+      span serviceProviderLegalName:
+      input(type="text" name="serviceProviderLegalName" value="Индивидуальный предприниматель Чернявская Татьяна Геннадьевна")
+
+    p(style="display:none")
+      span serviceProviderShopName:
+      input(type="text" name="serviceProviderShopName" value="Посещение занятий")
+
+    p(style="display:none")
+      span eripId:
+      input(type="number" name="eripId" value="14098001")
+
+    p(style="display:none")
+      span spClaimId:
+      input(type="text" name="spClaimId" value="0")
+
+    p(style="display:none")
+      span amount:
+      input(type="text" name="amount" value="0")
+
+    p(style="display:none")
+      span currency:
+      input(type="text" name="currency" value="BYN")
+
+    p(style="display:none")
+      span isTariff:
+      input(type="checkbox" name="isTariff" id="isTariff")
+
+    input(id="isTariff_hidden" type="hidden" name="isTariff" value="false")
+
+    p(style="display:none")
+      span createBill:
+      input(type="checkbox" name="createBill" id="createBill" checked)
+
+    input(id="createBill_hidden" type="hidden" name="createBill" value="true")
+
+    p(style="display:none")
+      span returnUrl:
+      input(type="text" name="returnUrl" value="https://hutkigrosh/")
+
+    p(style="display:none")
+      span cancelReturnUrl:
+      input(type="text" name="cancelReturnUrl" value="https://hutkigrosh.by/")
+
+    p(style="display:none")
+      span submitValue:
+      input(type="text" name="submitValue" value="Оплатить")
+
+    p(style="display:none")
+      span userId:
+      input(type="text" name="userId" value="nailaprojects@mail.ru")
+
+    p(style="display:none")
+      span requestFIO:
+      input(type="checkbox" name="requestFIO" id="requestFIO" checked)
+    input(id="requestFIO_hidden" type="hidden" name="requestFIO" value="true")
+
+    p(style="display:none")
+      span requestAddress:
+      input(type="checkbox" name="requestAddress" id="requestAddress" checked)
+    input(id="requestAddress_hidden" type="hidden" name="requestAddress" value="true")
+
+    p(style="display:none")
+      span requestPhone:
+      input(type="checkbox" name="requestPhone" id="requestPhone")
+    input(id="requestPhone_hidden" type="hidden" name="requestPhone" value="false")
+
+    p(style="display:none")
+      span requestEmail:
+      input(type="checkbox" name="requestEmail" id="requestEmail")
+    input(id="requestEmail_hidden" type="hidden" name="requestEmail" value="false")
+
+    +button Купить абонемент

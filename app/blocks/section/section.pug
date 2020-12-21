@@ -1,0 +1,7 @@
+mixin section(containerNone)
+  +b.SECTION.section&attributes(attributes)
+    if !containerNone
+      .container
+        block
+    if containerNone
+      block

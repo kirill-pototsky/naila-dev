@@ -1,0 +1,82 @@
+.gallery-school {
+  padding-bottom: 60px;
+  overflow-x: hidden;
+
+  .swiper {
+    &-container {
+      padding-top: 20px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    transition: all $ease-main;
+    overflow: hidden;
+
+    .title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+      font-size: 24px;
+      line-height: 29px;
+      letter-spacing: 0.085em;
+      text-transform: uppercase;
+      font-family: $font-second;
+      color: #fff;
+      z-index: 3;
+      background-color: rgba(0, 0, 0, 0.35);
+      transition: all $ease-main;
+      z-index: 3;
+    }
+
+    .bg-image {
+      z-index: 2;
+      @include ratio(300, 425);
+      transition: all $ease-main;
+
+      // &::before {
+      //   content: '';
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   right: 0;
+      //   bottom: 0;
+      //   background-color: rgba($color-basic, 0.4);
+      //   z-index: 2;
+      // }
+    }
+
+    .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      padding-top: 100px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 10px;
+      overflow: auto;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-15px);
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+
+      .title {
+        background: $gradient-main;
+      }
+
+      .bg-image {
+        opacity: 0;
+      }
+    }
+  }
+}

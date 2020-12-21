@@ -1,0 +1,24 @@
+mixin card(data)
+  +b.card&attributes(attributes)
+    +grid
+      +col(5)
+        a(href=data.path)
+          +e.image
+            +bg-image(`intro/${data.image}`)
+      +col(7)
+        +e.content
+          +e.text
+            h3
+              a(href=data.path)= data.title
+            h4= data.descr
+              if data.newLine
+                span= data.newLine
+
+          +e.order
+            each arr in data.listArr
+              +list(arr)
+
+          +button-wrap
+            +button('a')(href=data.path) Подробнее
+            +button('a')(href="#feedback" modal-target="form")._dark Хочу пробный урок
+    block

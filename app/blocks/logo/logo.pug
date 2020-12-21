@@ -1,0 +1,5 @@
+mixin logo(white)
+  +b.A(href="index.html").logo&attributes(attributes)
+    img(src=`assets/images/${white?'logo-white.png':'logo.png'}` alt="logo")
+    //- span творческий коворкинг
+    block

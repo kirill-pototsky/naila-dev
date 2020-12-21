@@ -1,0 +1,33 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Школа актерского мастерства';
+  - var actor = true;
+  - var formNone = true;
+  -
+    var introActorlData = {
+      "title": "Обрети в себе уверенность на сцене и в жизни!",
+      "subtitle": "С нами ты:",
+      "list": ["прокачаешь уверенность и раскрепощённость", "познаешь границы своей личности", "разовьёшь эмоциональный интеллект", "обретёшь свободу в общении с новыми людьми", "получишь инструментарий для развития своего видеоблога"],
+      "descr": "С нами ты полюбишь свой голос и будешь кайфовать от себя!",
+      "linkVideo": "https://www.youtube.com/embed/4gvHmM8jir8"
+    };
+
+block content
+  +section._school
+    .text-section
+      h1 Школа актерского мастерства
+    +intro-school(introActorlData)
+
+  //- +section._padding-none
+  //-   .text-section
+  //-      p Мы помогаем стать лучшей версией себя.
+  //-       br
+  //-       | Обучись магии актёрского перевоплощения вместе с нами.
+
+  +section
+    .text-section
+      h2
+        span Виды занятий
+    +tabs-section
+

@@ -1,0 +1,16 @@
+$gradient-main: linear-gradient(90deg, #950b32 0%, #e85649 100%);
+$gradient-main-reverse: linear-gradient(90deg, #e85649 0%, #950b32 100%);
+
+// @include gradient-text($gradient-main);
+
+@mixin gradient-text($gradient, $border: false) {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @if $border {
+    border: $border solid;
+    border-image: $gradient;
+    border-image-slice: 1;
+  }
+}

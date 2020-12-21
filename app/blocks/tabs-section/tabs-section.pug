@@ -1,0 +1,36 @@
+-
+  var tabData = [
+      {
+        "title": "Индивидуальные занятия",
+        "content": "— это отличная возможность персональной работы с педагогом",
+        "list": ["Всё внимание преподавателя только для тебя", "Индивидуальная программа, разработанная специально под твои запросы", "Возможность больше углубиться в индивидуальные тонкости и нюансы.", "Ты можешь выбрать себе удобное расписание"],
+        "dataAttr": "personal",
+        "active": true
+      },
+      {
+        "title": "Групповые занятия",
+        "content": "— это отличная возможность провести время в крутом окружении и получить мощный заряд энергии на весь день!",
+        "list": ["Выгоднее, чем индивидуальные занятия", "Сообщество единомышленников", "Занятия в группе интереснее и интерактивнее", "Мотивируйся примерами развития в команде"],
+        "dataAttr": "group"
+      }
+  ];
+
+mixin tabs-section(personalData, delGroup)
+  +b.tabs-section&attributes(attributes)
+    +tabs
+      +tab(class="active" data-tab-target="personal") Индивидуальные
+      if !delGroup
+        +tab(data-tab-target="group") Групповые
+      +tab(true)(href="business-page.html") Корпоративные
+
+    +tabs-content
+      each tab in personalData?personalData:tabData
+        +tab-wrapper(class=tab.active&&"active" data-tab=tab.dataAttr data-tab-group="lesson")
+          p
+            span= tab.title
+            | #{' '} #{tab.content}
+          +list(tab.list)
+          +button-wrap
+            +button(modal-target="form")._dark.desktop Хочу на пробный урок
+            //- +button(modal-target="form") Купить абонемент
+            +grosh

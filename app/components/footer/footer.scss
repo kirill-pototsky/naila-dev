@@ -1,0 +1,159 @@
+.footer {
+  position: relative;
+  padding-top: 40px;
+  font-family: $font-second;
+  font-weight: 500;
+  border-top: 1px solid rgba($color-basic, 0.15);
+
+  .grid {
+    margin-top: 40px;
+
+    @include screen(md, max) {
+      margin-top: 10px;
+    }
+  }
+
+  .container {
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba($color-basic, 0.15);
+  }
+
+  .logo {
+    @include screen(md, max) {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 500;
+
+    @include screen(md, max) {
+      font-size: 18px;
+      line-height: 21px;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    position: relative;
+    font-size: 18px;
+    line-height: 28px;
+    margin-top: 25px;
+
+    @include screen(md, max) {
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    &.contacts {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      a,
+      span {
+        &:not(:last-child) {
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    svg {
+      width: 15px;
+      height: 15px;
+      fill: $color-basic;
+    }
+
+    .pay-info {
+      position: absolute;
+      right: -20px;
+      top: -5px;
+      background-color: #000;
+      width: 15px;
+      height: 15px;
+      border-radius: 100%;
+      color: #fff;
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 15px;
+      cursor: pointer;
+
+      &:hover span {
+        display: block;
+      }
+
+      span {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(100%, -100%);
+        background-color: $color-basic;
+        border-radius: 15px;
+        padding: 10px 15px;
+        min-width: 415px;
+        font-family: $font-second;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        z-index: 3;
+      }
+    }
+
+    .icon {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 100%;
+      background-color: $color-basic;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0;
+
+      svg {
+        width: 10px;
+        height: 10px;
+        fill: #fff;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    a {
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+
+      svg {
+        width: 35px;
+        height: 35px;
+        fill: $color-basic;
+      }
+    }
+
+    @include screen(md, max) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        &:not(:last-child) {
+          margin-bottom: 0;
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}

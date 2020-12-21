@@ -1,0 +1,130 @@
+.tabs {
+  $tab-gap: 25px;
+
+  display: block;
+  font-size: 0;
+  margin-top: -$tab-gap;
+  display: flex;
+  justify-content: space-around;
+
+  @include screen(md, max) {
+    flex-wrap: wrap;
+  }
+
+  &__tab {
+    position: relative;
+    display: inline-block;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 54px;
+    padding-right: 54px;
+    cursor: pointer;
+    font-size: 28px;
+    line-height: 33px;
+    border-radius: 100px;
+    background: #fff;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: transparent;
+      border-radius: 100px;
+      z-index: 1;
+      transition: all $ease-main;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      right: 6px;
+      bottom: 6px;
+      background-color: #fff;
+      z-index: 2;
+      border-radius: 100px;
+      transition: all $ease-main;
+    }
+
+    span {
+      position: relative;
+      font-size: 28px;
+      line-height: 33px;
+      border-radius: 100px;
+      z-index: 3;
+      transition: all $ease-main;
+    }
+
+    &.active {
+      background: $gradient-main;
+
+      &::before {
+        background: $gradient-main;
+      }
+
+      span {
+        @include gradient-text($gradient-main);
+      }
+    }
+
+    @include screen(md, max) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      span {
+        font-size: 20px;
+      }
+    }
+  }
+
+  & + &-content {
+    margin-top: 30px;
+  }
+
+  &-content {
+    padding-top: 70px;
+
+    &__wrapper {
+      display: none;
+      opacity: 0;
+      transition: opacity $ease-main, transform $ease-main;
+      transform: translate3d(0, 10px, 0);
+
+      &.active {
+        display: block;
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    p {
+      font-size: 28px;
+      line-height: 42px;
+      font-family: $font-second;
+      font-weight: 500;
+
+      span {
+        @include gradient-text($gradient-main);
+      }
+    }
+
+    .list {
+      margin-top: 35px;
+      margin-bottom: 40px;
+    }
+
+    .button {
+      @include screen(md, max) {
+        max-width: 100%;
+      }
+    }
+
+    @include screen(md, max) {
+      padding-top: 0;
+    }
+  }
+}

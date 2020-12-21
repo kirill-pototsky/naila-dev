@@ -1,0 +1,25 @@
+.sitemap {
+  display: block;
+  padding: 50px 0;
+  min-height: 100vh;
+
+  .link {
+    display: block;
+    transition: opacity $ease-main;
+    color: $color-main;
+    font-size: 20px;
+    @include gradient-text($gradient-main);
+
+    &__text {
+      border-bottom: none;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+  }
+}

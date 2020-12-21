@@ -1,0 +1,22 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = 'Frontend Template';
+  - var formNone = true;
+
+mixin demo-link(path)
+  +link(href=`${path}.html`, target='_blank')
+    block
+    |#{' '} (#{path}.html)
+
+block content
+  +b.SECTION.sitemap
+    .container
+      +demo-link('index') Index page
+      +demo-link('fitness-page') Fitness page
+      +demo-link('vokal-page') Vokal page
+      +demo-link('orator-page') Orator page
+      +demo-link('actor-page') Actor page
+      +demo-link('business-page') Business page
+      +demo-link('article') Article page
+      +demo-link('404') 404 page

@@ -1,0 +1,43 @@
+include _externalIncludes
+include _internalIncludes
+
+doctype html
+html(lang='ru')
+  include head
+  body
+
+    +header
+
+    block content
+
+    if !formNone
+      +section#feedback
+        .text-section
+          if personalForm
+            p Записаться на корпоративный
+              br
+              | тим-билдинг
+          else
+            p Записаться на пробное
+              br
+              | занятие
+        +form
+          +inputbox
+            +input(type="text" placeholder="Имя" name="Имя")
+          +inputbox
+            +input(type="text" placeholder="Телефон" name="Телефон" required)
+          +inputbox
+            +checkradio(true, true) Я согласен на
+              span #{' '} обработку персональных данных
+
+          +button Получить бесплатное занятие
+
+    +footer
+    +copyright
+
+
+    +modals
+      +modal-form(modal-name="form")
+    +modal-thanks
+    +svg-gradient
+    script(src=`assets/scripts/app.min.js?v=${Date.now()}`, charset='utf-8')

@@ -1,0 +1,82 @@
+.card-mobile {
+  padding-top: 25px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba($color-basic, 0.15);
+
+  .button-wrap {
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+
+  &__wrap {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    border-radius: 15px;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $color-basic;
+      z-index: 2;
+    }
+
+    &::before {
+      width: 100%;
+      height: 2px;
+    }
+
+    &::after {
+      width: 2px;
+      height: 100%;
+    }
+  }
+
+  &__image {
+    display: block;
+    position: relative;
+    width: 50%;
+    // height: 50%;
+    // margin: -1px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba($color-basic, 0.3);
+      z-index: 2;
+    }
+
+    .descr {
+      position: absolute;
+      color: #fff;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: $font-second;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      padding-left: 20px;
+      padding-right: 20px;
+      z-index: 3;
+    }
+
+    .bg-image {
+      @include ratio(160, 160);
+    }
+  }
+}

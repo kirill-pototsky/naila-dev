@@ -1,0 +1,7 @@
+mixin business-card(data)
+  +b.business-card&attributes(attributes)
+    +e.icon
+      +icon(data.icon)
+    +e.content
+      h3= data.title
+      p= data.text

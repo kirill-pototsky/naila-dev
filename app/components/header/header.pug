@@ -1,0 +1,15 @@
+mixin header()
+  +b.HEADER.header&attributes(attributes)
+    .container
+      +logo.desktop
+
+      +e.links
+        +logo.mobile
+        +nav
+        +e.contacts
+          a(href="https://www.instagram.com/naila_belarus/?hl=ru" target="_blank").instagram.desktop
+            +icon('instagram')
+          a(href="tel:+375297854772").phone.desktop
+            +icon('phone')
+          a(href="tel:+375297854772").tel +375(29) 78 54 772
+    block

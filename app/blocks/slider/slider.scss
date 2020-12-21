@@ -1,0 +1,93 @@
+@import '../../node_modules/swiper/css/swiper.css';
+
+.swiper {
+  $b: &;
+
+  &-container {
+    overflow: visible;
+
+    #{$b}-pagination-bullets {
+      bottom: -60px;
+    }
+  }
+
+  &-button-prev,
+  &-button-next {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background: $gradient-main;
+
+    &::after {
+      position: absolute;
+      font-size: 22px;
+      color: #fff;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include screen(md, max) {
+      width: 38px;
+      height: 38px;
+
+      &::after {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &-nav {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    #{$b}-button-prev,
+    #{$b}-button-next {
+      position: relative;
+      right: auto;
+      left: auto;
+    }
+
+    #{$b}-button-prev,
+    #{$b}-button-next,
+    #{$b}-pagination {
+      margin: 0;
+    }
+
+    #{$b}-pagination {
+      position: static;
+      margin-left: 20px;
+      margin-right: 20px;
+      width: auto;
+      font-size: 48px;
+      line-height: 59px;
+      font-family: $font-second;
+      font-weight: 500;
+
+      @include screen(md, max) {
+        font-size: 24px;
+        line-height: 14px;
+      }
+    }
+  }
+
+  &-pagination {
+    @include screen(md, min) {
+      &-bullet {
+        width: 15px;
+        height: 15px;
+        background: $gradient-main;
+
+        &:not(:last-child) {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.gallery-intro {
+  padding-top: 0;
+  padding-bottom: 40px;
+
+  @include screen(md, max) {
+    padding-bottom: 50px;
+  }
+
+  .image {
+    .bg-image {
+      @include ratio(1920, 1080);
+      transition: all 0.1s ease-out;
+    }
+  }
+
+  .swiper {
+    &-nav {
+      bottom: -90px;
+
+      @include screen(md, max) {
+        bottom: -60px;
+      }
+    }
+    &-container {
+      overflow: visible;
+
+      @include screen(md, min) {
+        width: 1080px;
+      }
+
+      @include screen(md, max) {
+        // padding-left: $container-padding;
+        // padding-right: $container-padding;
+      }
+    }
+
+    &-slide {
+      transition: all 0.3s ease-in-out;
+      border-radius: 6px;
+      overflow: hidden;
+
+      @include screen(md, min) {
+        transform: scale(0.9) translateZ(0);
+      }
+
+      &-active {
+        transform-origin: center;
+        box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+
+        z-index: 2;
+
+        @include screen(md, min) {
+          margin-left: -10px;
+          margin-right: -10px;
+          transform: scale(1.08) translateZ(0);
+        }
+      }
+    }
+  }
+}
