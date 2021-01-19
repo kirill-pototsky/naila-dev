@@ -6,7 +6,7 @@ import header from './common/header';
 import burger from './common/burger';
 import modal from './common/modal';
 import form from './common/form';
-import grosh from './common/grosh';
+// import grosh from './common/grosh';
 
 $(() => {
   svg4everybody();
@@ -17,5 +17,5 @@ $(() => {
   burger();
   modal();
   form();
-  grosh();
+  // grosh();
 });

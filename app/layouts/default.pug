@@ -21,11 +21,11 @@ html(lang='ru')
             p Записаться на пробное
               br
               | занятие
-        +form
+        +form#form(action="mail.php" method="post")
+          //- +inputbox
+          //-   +input(type="name" placeholder="Имя")
           +inputbox
-            +input(type="text" placeholder="Имя" name="Имя")
-          +inputbox
-            +input(type="text" placeholder="Телефон" name="Телефон" required)
+            +input(type="text" name="phone" placeholder="Телефон" class="is-validate")
           +inputbox
             +checkradio(true, true) Я согласен на
               span #{' '} обработку персональных данных
@@ -40,4 +40,4 @@ html(lang='ru')
       +modal-form(modal-name="form")
     +modal-thanks
     +svg-gradient
-    script(src=`assets/scripts/app.min.js?v=${Date.now()}`, charset='utf-8')
+    script(src=`assets/scripts/app.min.js`, charset='utf-8')

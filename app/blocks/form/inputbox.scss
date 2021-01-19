@@ -1,4 +1,5 @@
 .inputbox {
+  position: relative;
   display: block;
 
   &:not(:first-child) {
@@ -13,5 +14,24 @@
 
   &__wrapper {
     position: relative;
+  }
+
+  &.is-error {
+    position: relative;
+
+    &::after {
+      @include pseudo($content: '!');
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%) translateZ(0);
+      width: 20px;
+      height: 20px;
+      color: red;
+      border: 1px solid;
+      border-radius: 100px;
+    }
   }
 }
