@@ -33,7 +33,7 @@ mixin select()
 
 mixin checkradio(checked, required, isRadio, name, value)
   +b.LABEL.checkradio&attributes(attributes)
-    +e.INPUT.input(name=name, value=value, checked=checked, type=(isRadio ? "radio" : "checkbox"), required=(required || false))
+    +e.INPUT.input(name=name, required=(required || false), value=value, checked=checked, type=(isRadio ? "radio" : "checkbox"))
     +e.SPAN.box
       +icon('check')
     +e.SPAN.content

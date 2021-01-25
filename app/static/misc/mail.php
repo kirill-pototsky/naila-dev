@@ -7,7 +7,7 @@ $c = true;
 if ( $method === 'POST' ) {
 
 	$project_name = 'naila.by';
-	$admin_email  = 'kiril.potockij@gmail.com';
+	$admin_email  = "Nailaprojects@mail.ru" . "Nailaprojects@mail.ru";
 	$form_subject = 'Форма обратной связи';
 
 	foreach ( $_POST as $key => $value ) {
