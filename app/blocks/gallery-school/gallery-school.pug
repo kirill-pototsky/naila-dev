@@ -7,7 +7,7 @@ mixin gallery-school()
         +slide
           .gallery-school__item
             .title= item.name
-            +bg-image(`dance/${item.image}.jpg`)
+            +bg-image(`dance/${item.image}`, 'jpg')
             .content
               p= item.content
     block

@@ -1,8 +1,12 @@
-mixin bg-image(path, video)
+mixin bg-image(nameImg, picFormat, video)
   +b.bg-image&attributes(attributes)
     if video
       video(poster=`assets/video/${path}.jpg` muted controls)
         source(src=`assets/video/${path}.webm` type='video/webm')
         source(src=`assets/video/${path}.mp4` type='video/mp4')
+    if picFormat
+      picture
+        source(srcset=`assets/images/${nameImg}.webp` type="image/webp")
+        img(src=`assets/images/${nameImg}.${picFormat}` alt=nameImg)
     else
-      img(src=`assets/images/${path}` alt=path)
+      img(src=`assets/images/${nameImg}` alt=nameImg)

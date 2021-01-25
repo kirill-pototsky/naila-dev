@@ -3,7 +3,7 @@
 mixin intro()
   +b.intro&attributes(attributes)
     +e.banner.mobile
-      +bg-image('banner-mobile.png')
+      +bg-image('banner-mobile', 'png')
       //- span Banner
     +grid.desktop
       +col(8)
@@ -25,7 +25,7 @@ mixin intro()
 
       +col(4)
         +e.image
-          +bg-image('intro/intro-bg.png')
+          +bg-image('intro/intro-bg', 'png')
 
 mixin intro-school(data)
   +b.intro&attributes(attributes)

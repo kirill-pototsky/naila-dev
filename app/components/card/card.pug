@@ -4,7 +4,7 @@ mixin card(data)
       +col(5)
         a(href=data.path)
           +e.image
-            +bg-image(`intro/${data.image}`)
+            +bg-image(`intro/${data.image}`, 'jpg')
       +col(7)
         +e.content
           +e.text

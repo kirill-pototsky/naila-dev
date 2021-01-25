@@ -1,5 +1,6 @@
 mixin logo(white)
   +b.A(href="/").logo&attributes(attributes)
-    img(src=`assets/images/${white?'logo-white.png':'logo.png'}` alt="logo")
-    //- span творческий коворкинг
+    picture
+      source(srcset=`assets/images/${white?'logo-white.webp':'logo.webp'}` type="image/webp")
+      img(src=`assets/images/${white?'logo-white.png':'logo.png'}` alt="logo")
     block

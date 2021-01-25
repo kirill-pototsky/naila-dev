@@ -5,7 +5,8 @@
   width: 119px;
   height: 40px;
 
-  img {
+  img,
+  picture {
     @include fill-img;
   }
 
