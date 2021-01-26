@@ -6,6 +6,7 @@ import header from './common/header';
 import burger from './common/burger';
 import modal from './common/modal';
 import form from './common/form';
+import preloader from './common/preloader';
 // import grosh from './common/grosh';
 
 $(() => {
@@ -17,5 +18,6 @@ $(() => {
   burger();
   modal();
   form();
+  preloader();
   // grosh();
 });
