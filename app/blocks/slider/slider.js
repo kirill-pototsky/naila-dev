@@ -33,6 +33,7 @@ export default () => {
 
   const schoolSlider = new Swiper('.js-school-slider', {
     speed: 500,
+    spaceBetween: 5,
     navigation: {
       prevEl: '.swiper-button-prev',
       nextEl: '.swiper-button-next',
@@ -44,17 +45,25 @@ export default () => {
     breakpoints: {
       320: {
         slidesPerView: 1,
-        spaceBetween: 25,
         pagination: {
           clickable: true,
           type: 'fraction',
         },
       },
+      380: {
+        slidesPerView: 1.2,
+      },
       480: {
-        spaceBetween: 1,
+        slidesPerView: 1.4,
+      },
+      630: {
+        slidesPerView: 1.7,
       },
       768: {
         slidesPerView: 2,
+      },
+      868: {
+        slidesPerView: 2.3,
       },
       992: {
         slidesPerView: 3,
@@ -65,6 +74,10 @@ export default () => {
       },
       1280: {
         slidesPerView: 4,
+        pagination: {
+          clickable: true,
+          type: 'bullets',
+        },
       },
     },
   });

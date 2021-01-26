@@ -6,8 +6,10 @@ mixin gallery-school()
       each item in galleryData
         +slide
           .gallery-school__item
-            .title= item.name
-            +bg-image(`dance/${item.image}`, 'jpg')
-            .content
+            .gallery-school__front
+              .title= item.name
+              +bg-image(`dance/${item.image}`, 'jpg')
+            .gallery-school__back
+              .title= item.name
               p= item.content
-    block
+

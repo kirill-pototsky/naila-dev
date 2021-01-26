@@ -1,17 +1,53 @@
 .gallery-school {
   padding-bottom: 60px;
-  overflow-x: hidden;
+
+  $b: &;
 
   .swiper {
     &-container {
       padding-top: 20px;
+    }
+
+    &-button-prev.desktop,
+    &-button-next.desktop {
+      top: auto;
+      bottom: -50px;
+      transform: translateY(50%);
     }
   }
 
   &__item {
     position: relative;
     transition: all $ease-main;
-    overflow: hidden;
+    perspective: 1000px;
+    @include ratio(300, 425);
+
+    #{$b} {
+      &__front,
+      &__back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        transition: 1s;
+        backface-visibility: hidden;
+      }
+
+      &__back {
+        transform: rotateY(180deg);
+        overflow: auto;
+
+        .title {
+          position: static;
+          background: $gradient-main;
+
+          + p {
+            padding: 10px;
+          }
+        }
+      }
+    }
 
     .title {
       position: absolute;
@@ -35,47 +71,30 @@
     }
 
     .bg-image {
-      z-index: 2;
-      @include ratio(300, 425);
-      transition: all $ease-main;
-
-      // &::before {
-      //   content: '';
-      //   position: absolute;
-      //   top: 0;
-      //   left: 0;
-      //   right: 0;
-      //   bottom: 0;
-      //   background-color: rgba($color-basic, 0.4);
-      //   z-index: 2;
-      // }
-    }
-
-    .content {
       position: absolute;
       top: 0;
-      left: 0;
-      right: 0;
       bottom: 0;
-      z-index: 1;
-      padding-top: 100px;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-bottom: 10px;
-      overflow: auto;
+      right: 0;
+      left: 0;
+      z-index: 2;
     }
 
     &:hover {
       cursor: pointer;
-      transform: translateY(-15px);
-      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+      z-index: 11 !important;
 
-      .title {
-        background: $gradient-main;
-      }
+      #{$b} {
+        &__front,
+        &__back {
+          box-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+        }
 
-      .bg-image {
-        opacity: 0;
+        &__front {
+          transform: rotateY(180deg);
+        }
+        &__back {
+          transform: rotateY(360deg);
+        }
       }
     }
   }
