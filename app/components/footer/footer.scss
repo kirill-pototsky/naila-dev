@@ -59,6 +59,26 @@
           margin-bottom: 5px;
         }
       }
+
+      a {
+        position: relative;
+
+        &::before {
+          @include pseudo;
+          left: 0;
+          bottom: 0;
+          height: 2px;
+          width: 0;
+          background-color: $color-basic;
+          transition: width $ease-main;
+        }
+
+        &:hover {
+          &::before {
+            width: 100%;
+          }
+        }
+      }
     }
 
     svg {
@@ -140,6 +160,13 @@
         width: 35px;
         height: 35px;
         fill: $color-basic;
+        transition: fill $ease-main;
+      }
+
+      &:hover {
+        svg {
+          fill: url(#gradient);
+        }
       }
     }
 

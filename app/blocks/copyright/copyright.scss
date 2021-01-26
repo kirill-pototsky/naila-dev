@@ -17,4 +17,24 @@
       display: block;
     }
   }
+
+  a {
+    position: relative;
+
+    &::before {
+      @include pseudo;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background-color: $color-basic;
+      transition: width $ease-main;
+    }
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+  }
 }
