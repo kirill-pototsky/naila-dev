@@ -1,5 +1,5 @@
 /* eslint-disable */
-
+import Inputmask from "inputmask";
 import { freeze, unfreeze } from '../../blocks/js-functions/freeze';
 
 export default () => {
@@ -8,6 +8,13 @@ export default () => {
   const thanks = document.querySelector('.modal-thanks');
 
   $(document).ready(function() {
+
+    var inputPfone = document.querySelectorAll("form input");
+
+    var im = new Inputmask("+375 (99) 999-99-99");
+    [].forEach.call(inputPfone, el => {
+      im.mask(el);
+    })
 
     //E-mail Ajax Send
     $(".form").submit(function() {
